@@ -1,7 +1,7 @@
 {
-  "name": "javascript-for-cats",
+  "name": "javascript-for-cats-it",
   "version": "1.0.0",
-  "description": "javascript for cats",
+  "description": "Traduzione italiana di javascript for cats",
   "main": "build.js",
   "scripts": {
     "render": "node render.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxogden/javascript-for-cats.git"
+    "url": "https://github.com/lucanenni/javascript-for-cats-it.git"
   },
   "gh-pages-deploy": {
     "prep": [
@@ -18,11 +18,14 @@
     "noprompt": "true"
   },
   "author": "max ogden",
+  "contributors": [
+    "Luca Nenni (traduzione italiana)"
+  ],
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/maxogden/javascript-for-cats/issues"
+    "url": "https://github.com/lucanenni/javascript-for-cats-it/issues"
   },
-  "homepage": "https://github.com/maxogden/javascript-for-cats",
+  "homepage": "https://github.com/lucanenni/javascript-for-cats-it",
   "dependencies": {
     "marked": "^0.3.2",
     "mustache": "^1.0.0"

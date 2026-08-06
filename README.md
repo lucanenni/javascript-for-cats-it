@@ -1,424 +1,429 @@
-<span class="bigTitle">JavaScript For Cats</span>
-## An introduction for new programmers <span class="right">![cat](images/substack-cats.png)</span>
-### *So easy your human companion could do it too!*
+<span class="bigTitle">JavaScript per Gatti</span>
+## Un'introduzione per programmatori alle prime armi <span class="right">![cat](images/substack-cats.png)</span>
+### *Così facile che potrebbe farcela anche il tuo umano di compagnia!*
 
-JavaScript is a programming language or, in other words, a means by which a computer is instructed to do things. Just the same as one controls humans with hisses and meows, one controls computers with statements written in a programming language. All web browsers understand JavaScript and you can take advantage of that to make web pages do crazy things!
+JavaScript è un linguaggio di programmazione, ovvero un modo per dare istruzioni a un computer. Proprio come si controllano gli umani con soffi e miagolii, si controllano i computer con istruzioni scritte in un linguaggio di programmazione. Tutti i browser web capiscono JavaScript e puoi approfittarne per far fare alle pagine web cose pazzesche!
 
-JavaScript started as a way to make web pages more interactive. Nowadays JavaScript runs in more places than just web browsers &mdash; it runs on web servers, phones and even robots! This page will teach you some JavaScript basics so that you can get up and running in no time*.
+JavaScript è nato come un modo per rendere le pagine web più interattive. Oggi JavaScript gira in molti più posti che nei soli browser &mdash; funziona su server web, telefoni e persino robot! Questa pagina ti insegnerà le basi di JavaScript in modo che tu possa partire in men che non si dica*.
 
-\* *Actual time: more than none. Probably an hour or two. Also since you are a cat you are less likely to run and more likely to lay around in the sun*
+\* *Tempo reale: più di zero. Probabilmente un'ora o due. Inoltre, essendo un gatto, è più probabile che tu resti sdraiato al sole piuttosto che correre*
 
-JavaScript for Cats is [CC0 Licensed](https://creativecommons.org/publicdomain/zero/1.0/)
+JavaScript per Gatti è distribuito con licenza [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.it)
 
-## Table of contents
+*Questa è una traduzione italiana non ufficiale di [JavaScript for Cats](https://github.com/max-mapper/javascript-for-cats) di [@maxogden](http://twitter.com/maxogden). Il repository di questa traduzione si trova [qui](https://github.com/lucanenni/javascript-for-cats-it).*
 
-- [The console](#basics)
-- [Strings](#strings)
-- [Values and variables](#values)
-- [Using functions](#functions)
-- [Built in JS functions](#standard-library)
-- [Download new JS functions](#third-party-javascript)
-- [Writing new functions](#writing-functions)
-- [Loops](#loops)
-- [Arrays](#arrays)
-- [Objects](#objects)
-- [Callbacks](#callbacks)
-- [Recommended reading](#recommended-reading)
+## Indice
 
-## Don't be a scaredy-cat
+- [La console](#basics)
+- [Stringhe](#strings)
+- [Valori e variabili](#values)
+- [Usare le funzioni](#functions)
+- [Funzioni integrate in JS](#standard-library)
+- [Scaricare nuove funzioni JS](#third-party-javascript)
+- [Scrivere nuove funzioni](#writing-functions)
+- [Cicli](#loops)
+- [Array](#arrays)
+- [Oggetti](#objects)
+- [Callback](#callbacks)
+- [Letture consigliate](#recommended-reading)
+
+## Non fare il gatto pauroso
 
 <span class="right">![cat](images/yarnify.png)</span>
 
-You will always land on your feet &mdash; even when programming! Unlike [pawing over a glass of water](images/dealwithit.gif) on your laptop, _nothing_ in these tutorials will damage your computer in any way, even if you mistype a command or click the wrong button. Like cats, computer programmers make mistakes all time: misspelling things, forgetting quotes or brackets, and being forgetful of how basic functions (and yarn, lasers) work. Programmers care more about making it work _eventually_ rather than trying to make it work the very first time. The best way to learn is by making mistakes!
+Atterrerai sempre in piedi &mdash; anche mentre programmi! A differenza di [uno zampone su un bicchiere d'acqua](images/dealwithit.gif) sul tuo portatile, _nulla_ in questi tutorial danneggerà il tuo computer in alcun modo, anche se sbagli a digitare un comando o clicchi sul pulsante sbagliato. Come i gatti, anche i programmatori sbagliano di continuo: parole scritte male, virgolette o parentesi dimenticate, funzioni di base (e gomitoli, laser) di cui ci si scorda il funzionamento. Ai programmatori interessa più farlo funzionare _prima o poi_ che farlo funzionare al primo colpo. Il modo migliore per imparare è sbagliare!
 
-So don't be a scaredy-cat! The absolute worst thing that will happen is that you might have to refresh this page in your web browser if you get stuck. Don't worry though, this will happen very rarely.
+Quindi non fare il gatto pauroso! La cosa peggiore che possa capitarti è dover ricaricare questa pagina nel browser se resti bloccato. Ma non preoccuparti, capiterà molto raramente.
 
-## <a id="basics" href="#basics">#</a> The basics
+## <a id="basics" href="#basics">#</a> Le basi
 
-There is JavaScript running on this page right now.  Let's play around with it a little. For the sake of simplicity I'll assume you are using Google Chrome to read this page (if you aren't it's probably easier on both of us if you follow along with Chrome).
+C'è del JavaScript in esecuzione su questa pagina proprio ora. Giochiamoci un po'. Per semplicità darò per scontato che tu stia usando Google Chrome per leggere questa pagina (se non è così, probabilmente è più comodo per entrambi se segui usando Chrome).
 
-First, right click anywhere on the screen and hit **Inspect Element**, then click on the **Console** tab. You should see a thingy that looks like this:
+Prima di tutto, fai clic con il tasto destro in un punto qualsiasi dello schermo e scegli **Ispeziona**, poi clicca sulla scheda **Console**. Dovresti vedere un affare simile a questo:
 
 ![console](images/console.gif)
 
-This is a console, otherwise known as a "command line" or "terminal". Basically it's a way to type one thing at a time into a computer and immediately get the computers answer back. They are super useful as a learning tool (I still use the console nearly every day that I'm coding).
+Questa è una console, conosciuta anche come "riga di comando" o "terminale". In pratica è un modo per digitare una cosa alla volta in un computer e ottenere subito la risposta del computer. Sono strumenti utilissimi per imparare (io uso ancora la console quasi ogni giorno mentre programmo).
 
-The console does some pretty cool stuff. Here I have started to type something and the console is helping me out by giving me a list of all the possible things I could continue to type! Another thing you could do is type `1 + 1` into the console and then hit the `Enter` key and watch what happens.
+La console fa delle cose piuttosto interessanti. Qui ho iniziato a digitare qualcosa e la console mi sta aiutando dandomi una lista di tutte le cose possibili che potrei continuare a digitare! Un'altra cosa che potresti fare è digitare `1 + 1` nella console e poi premere il tasto `Invio` per vedere cosa succede.
 
-Using the console is a very important part of learning JavaScript. If you don't know if something works or what the command is for something, go to the console and figure it out! Here's an example:
+Usare la console è una parte molto importante dell'apprendimento di JavaScript. Se non sai se qualcosa funziona o qual è il comando per fare una certa cosa, vai nella console e scoprilo! Ecco un esempio:
 
-### <a id="strings" href="#strings">#</a> Strings
+### <a id="strings" href="#strings">#</a> Stringhe
 
-Since I am a cat I want to replace every instance of the word `dog` on the Internet with `those blasted dogs`. First go into your console and type in a few sentences that contain the word `dog` at least once. In JavaScript a bunch of letters, numbers, words or anything else is known as a **String** (as in a *string* of characters). Strings have to begin AND end with a quotation mark. Single `'` or double `"` is fine, just make sure you use the same at the beginning as you do at the end.
+Dato che sono un gatto voglio sostituire ogni occorrenza della parola `cane` su Internet con `quei maledetti cani`. Prima vai nella tua console e digita qualche frase che contenga la parola `cane` almeno una volta. In JavaScript un insieme di lettere, numeri, parole o qualsiasi altra cosa è chiamato **Stringa** (come in una *stringa* di caratteri). Le stringhe devono iniziare E finire con delle virgolette. Singole `'` o doppie `"` vanno bene entrambe, basta solo che usi le stesse all'inizio e alla fine.
 
 ![console](images/console-strings.gif)
 
-See the nasty error message? Don't worry - you didn't break any laws. SyntaxError ILLEGAL is just the way it sounds when robots tell you that your program has a problem. The first two sentences had matching quotation marks at the beginning and end, but when I mixed single and double quotation marks it freaked out on me.
+Visto quel brutto messaggio d'errore? Non preoccuparti, non hai infranto nessuna legge. SyntaxError ILLEGAL è solo il modo in cui suona quando i robot ti dicono che il tuo programma ha un problema. Le prime due frasi avevano virgolette corrispondenti all'inizio e alla fine, ma quando ho mescolato virgolette singole e doppie la console si è agitata.
 
-OK, to fix up one of these sentences (by replacing `dog` with our enhanced version) we have to first save the original sentence so that we can call it up later when we do our replacing magic. Notice how the string gets repeated in red when we type it into the console? This is because we haven't told it to save the sentence anywhere so it just gives it right back (or it gives us an Error back if we messed something up).
+Ok, per sistemare una di queste frasi (sostituendo `cane` con la nostra versione potenziata) dobbiamo prima salvare la frase originale in modo da poterla richiamare più tardi quando faremo la nostra magia di sostituzione. Hai notato come la stringa viene ripetuta in rosso quando la digitiamo nella console? Questo perché non abbiamo detto di salvare la frase da nessuna parte, quindi ce la restituisce e basta (oppure ci restituisce un Errore se abbiamo sbagliato qualcosa).
 
-### <a id="values" href="#values">#</a> Values and variables
+### <a id="values" href="#values">#</a> Valori e variabili
 
-**Values** are the simplest components in JavaScript. `1` is a value, `true` is a value, `"hello"` is a value, `function() {}` is a value, the list goes on! There are a handful of different **types** of values in JavaScript but we don't need to go over them all right away &mdash; you will learn them naturally the more you code!
+I **Valori** sono i componenti più semplici in JavaScript. `1` è un valore, `true` è un valore, `"ciao"` è un valore, `function() {}` è un valore, e la lista continua! Ci sono diversi **tipi** di valori in JavaScript ma non serve vederli tutti subito &mdash; li imparerai naturalmente più programmi!
 
-To store values we use things called **variables**. The word 'variable' means 'can change' and is used because variables can store many different types of values and can change their value many times. They are pretty much like mailboxes. We put something in a variable, like our sentence, and then give the variable an address that we can use to look up the sentence later. In real life mailboxes have to have PO Box numbers but in JavaScript you usually just use lowercase letters or numbers without any spaces.
+Per conservare i valori usiamo delle cose chiamate **variabili**. La parola "variabile" significa "che può cambiare" e viene usata perché le variabili possono contenere molti tipi diversi di valori e possono cambiare il loro valore molte volte. Sono un po' come cassette della posta. Mettiamo qualcosa in una variabile, come la nostra frase, e poi diamo alla variabile un indirizzo che possiamo usare per ritrovare la frase più tardi. Nella vita reale le cassette della posta devono avere un numero di casella postale, ma in JavaScript di solito si usano semplicemente lettere minuscole o numeri senza spazi.
 
 ![console](images/console-variables.gif)
 
-`var` is shorthand for variable and the `=` means *store the thing on the right-hand side in the thing on the left-hand side*. Also as you can see, now that we are storing our sentence in a variable the console doesn't just return our sentence right away, but instead gives us `undefined` which means *there was nothing to return*.
+`var` è l'abbreviazione di variabile e il simbolo `=` significa *salva la cosa a destra dentro la cosa a sinistra*. Inoltre, come puoi vedere, ora che stiamo salvando la nostra frase in una variabile la console non restituisce subito la frase, ma ci dà `undefined`, che significa *non c'era nulla da restituire*.
 
-If you simply type a variable name into the console it will print out the value stored in that variable. A note about variables is that by default they go away when you switch to a different page. If I were to hit the Refresh button in Chrome, for example, my `dogSentence` variable would get wiped and it would be like it never existed. But don't worry about this too much for now &mdash; you can just hit the up or down arrows on your keyboard while in the console to go through everything you've entered in recently.
+Se digiti semplicemente il nome di una variabile nella console, verrà stampato il valore contenuto in quella variabile. Una nota sulle variabili: per impostazione predefinita scompaiono quando cambi pagina. Se premessi il pulsante Ricarica in Chrome, per esempio, la mia variabile `fraseCane` verrebbe cancellata e sarebbe come se non fosse mai esistita. Ma non preoccupartene troppo per ora &mdash; puoi semplicemente premere le frecce su o giù sulla tastiera mentre sei nella console per scorrere tutto ciò che hai digitato di recente.
 
-### <a id="functions" href="#functions">#</a> Functions
+### <a id="functions" href="#functions">#</a> Funzioni
 
-Now that we have our sentence stored in a variable, let's change a word stored in it!  We can do this by performing a *function*.  *Functions* are a type of value that, well, serve a specific *function* (AKA purpose or action) for us. Calling them "actions" sounded weird I guess so they went with the word "function" instead.
+Ora che abbiamo la nostra frase salvata in una variabile, cambiamo una parola al suo interno! Possiamo farlo eseguendo una *funzione*. Le *funzioni* sono un tipo di valore che, appunto, svolgono una specifica *funzione* (cioè scopo o azione) per noi. Chiamarle "azioni" suonava strano, immagino, quindi hanno scelto la parola "funzione" invece.
 
-JavaScript has a function called `replace` that does exactly what we want! Functions take in any number of values in their parentheses (zero, one or many) and return either nothing (`undefined`) or the changed string. The `replace` function is available to use on any strings and takes in two values: the characters to take out and the characters to swap in. It gets confusing to describe these things so here is a visual example:
+JavaScript ha una funzione chiamata `replace` che fa esattamente quello che vogliamo! Le funzioni accettano un numero qualsiasi di valori tra le parentesi (zero, uno o molti) e restituiscono o niente (`undefined`) o la stringa modificata. La funzione `replace` è disponibile su qualsiasi stringa e accetta due valori: i caratteri da togliere e i caratteri da mettere al loro posto. Diventa confuso descrivere queste cose a parole, quindi ecco un esempio visivo:
 
 ![console](images/console-replace.gif)
 
-Notice how the value of `dogSentence` is the same even after we run `replace` on it? This is because the `replace` function, (and most JavaScript functions for that matter) takes the value we give it and returns a **new value**, without modifying the value we passed in. Since we didn't store the result (there is no `=` on the left side of the replace function) it just printed out the return value in our console.
+Hai notato come il valore di `fraseCane` resti lo stesso anche dopo aver eseguito `replace` su di esso? Questo perché la funzione `replace` (come la maggior parte delle funzioni JavaScript) prende il valore che le diamo e restituisce un **nuovo valore**, senza modificare il valore che le abbiamo passato. Dato che non abbiamo salvato il risultato (non c'è un `=` a sinistra della funzione replace), la console si è limitata a stamparne il valore di ritorno.
 
-### <a id="standard-library" href="#standard-library">#</a> The "standard library"
+### <a id="standard-library" href="#standard-library">#</a> La "libreria standard"
 
-You might be wondering what other functions are available in JavaScript. The answer: A TON. There are lots **built in, standard libraries** that you can learn about at MDN (A site run by Mozilla that has lotsa nifty information about web technologies). For example [here is the MDN page on JavaScript's Math object](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Math).
+Ti starai chiedendo quali altre funzioni siano disponibili in JavaScript. La risposta: TANTISSIME. Ci sono un sacco di **librerie standard integrate** su cui puoi documentarti su MDN (un sito gestito da Mozilla pieno di informazioni utili sulle tecnologie web). Per esempio [ecco la pagina MDN sull'oggetto Math di JavaScript](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math).
 
-### <a id="third-party-javascript" href="#third-party-javascript">#</a> Third-party JavaScript
+### <a id="third-party-javascript" href="#third-party-javascript">#</a> JavaScript di terze parti
 
-There is also a lot of JavaScript code available that is **not built in**. JavaScript from third parties is usually referred to as a "library" or "plugin". One of my favorites is called **Underscore.js**. Let's go and grab it and load it into our page! First go to the Underscore site, [http://underscorejs.org/](http://underscorejs.org/), click on the download link (I usually use development versions because they are easier to read but both will give you the same basic functionality), and then copy all the code onto your clipboard (you can use Select All from the Edit menu to select everything). Then paste it into your console and hit enter. Now your browser has a new variable in it: `_`. Underscore gives you a ton of helpful functions to play with. We'll learn more about how to use them later.
+Esiste anche molto codice JavaScript disponibile che **non è integrato**. Il JavaScript proveniente da terze parti viene solitamente chiamato "libreria" o "plugin". Una delle mie preferite si chiama **Underscore.js**. Andiamo a prenderla e carichiamola nella nostra pagina! Prima vai sul sito di Underscore, [http://underscorejs.org/](http://underscorejs.org/), clicca sul link di download (di solito uso le versioni di sviluppo perché sono più facili da leggere, ma entrambe offrono le stesse funzionalità di base), poi copia tutto il codice negli appunti (puoi usare Seleziona tutto dal menu Modifica per selezionare tutto). Poi incollalo nella console e premi invio. Ora il tuo browser ha una nuova variabile: `_`. Underscore ti offre un sacco di funzioni utili con cui giocare. Impareremo di più su come usarle più avanti.
 
 ![console](images/underscore.gif)
 
-### <a id="writing-functions" href="#writing-functions">#</a> Making new functions
+### <a id="writing-functions" href="#writing-functions">#</a> Creare nuove funzioni
 
-You aren't limited to using other peoples functions &mdash; you can also write them yourself. It's pretty easy! Let's make a function called `makeMoreExciting` that adds a bunch of exclamation points to the end of a string.
+Non sei limitato a usare le funzioni altrui &mdash; puoi anche scriverle tu. È abbastanza facile! Creiamo una funzione chiamata `rendiPiuEsaltante` che aggiunge un po' di punti esclamativi alla fine di una stringa.
 
-    function makeMoreExciting(string) {
-      return string + '!!!!'
+    function rendiPiuEsaltante(stringa) {
+      return stringa + '!!!!'
     }
 
-In my head I read it out loud like this: "there's a function called 'make more exciting' that takes in a string and returns a new copy of that string that has a bunch of exclamation points at the end". Here is how we would write this in the console manually if we weren't using a function:
+Nella mia testa la leggo ad alta voce così: "c'è una funzione chiamata 'rendi più esaltante' che prende una stringa e restituisce una nuova copia di quella stringa con un po' di punti esclamativi alla fine". Ecco come scriveremmo questo nella console manualmente se non stessimo usando una funzione:
 
 ![console](images/custom-function-manually.gif)
 
-The expression `string + '!!!!'` returns a new string and our variable called `string` stays the same as before (since we never updated it to anything else with `=`).
+L'espressione `stringa + '!!!!'` restituisce una nuova stringa e la nostra variabile chiamata `stringa` rimane com'era prima (dato che non l'abbiamo mai aggiornata con `=`).
 
-Let's use our function instead of doing it manually. First, paste the function into the console and then **call** the function by **passing in** a string:
+Usiamo la nostra funzione invece di farlo manualmente. Prima, incolla la funzione nella console e poi **chiama** la funzione **passandole** una stringa:
 
 ![console](images/custom-function-call.gif)
 
-You could also call the same function by passing in a variable that points to a string (in the above example we just typed the string straight in there as a value instead of saving it to a variable first):
+Potresti anche chiamare la stessa funzione passandole una variabile che punta a una stringa (nell'esempio sopra abbiamo semplicemente digitato la stringa direttamente come valore invece di salvarla prima in una variabile):
 
 ![console](images/custom-function-call-variable.gif)
 
-The line `makeMoreExciting(sentence)` is equivalent to saying `sentence + '!!!!'`. What if we wanted to **modify in-place** (aka update) the value of sentence? Simply save the return value of the function back into our `sentence` variable:
+La riga `rendiPiuEsaltante(frase)` è equivalente a scrivere `frase + '!!!!'`. E se volessimo **modificare sul posto** (cioè aggiornare) il valore di frase? Basta salvare il valore restituito dalla funzione di nuovo nella variabile `frase`:
 
-    var sentence = "time for a nap"
-    sentence = makeMoreExciting(sentence)
+    var frase = "ora di fare un pisolino"
+    frase = rendiPiuEsaltante(frase)
 
-Now `sentence` will have the exclamation marks in it! Note that you only have to use `var` when you are **initializing** a variable &mdash; the first time you ever use it. After that you shouldn't use `var` unless you want to re-initialize (reset/clear/empty) the variable.
+Ora `frase` avrà i punti esclamativi al suo interno! Nota che devi usare `var` solo quando stai **inizializzando** una variabile &mdash; la prima volta che la usi. Dopodiché non dovresti usare `var` a meno che tu non voglia reinizializzare (resettare/svuotare) la variabile.
 
-What would happen if we took out the `return` statement in our function?
+Cosa succederebbe se togliessimo l'istruzione `return` dalla nostra funzione?
 
 ![console](images/custom-function-no-return.gif)
 
-Why is `sentence` empty? Because functions return `undefined` by default! You can choose to return a value by `return`ing something. Functions should take in a value and, if they change the value or create a new value that is supposed to be used later, `return` a value (fun fact: a fancy term for this style is *functional programming*). Here is another function that doesn't return anything but instead uses a different method to show us the output:
+Perché `frase` è vuota? Perché le funzioni restituiscono `undefined` per impostazione predefinita! Puoi scegliere di restituire un valore facendo un `return` di qualcosa. Le funzioni dovrebbero prendere un valore e, se cambiano il valore o ne creano uno nuovo che dovrà essere usato in seguito, fare `return` di un valore (curiosità: un termine altisonante per questo stile è *programmazione funzionale*). Ecco un'altra funzione che non restituisce nulla ma usa un metodo diverso per mostrarci il risultato:
 
 ```js
-function yellIt(string) {
-  string = string.toUpperCase()
-  string = makeMoreExciting(string)
-  console.log(string)
+function urlaLa(stringa) {
+  stringa = stringa.toUpperCase()
+  stringa = rendiPiuEsaltante(stringa)
+  console.log(stringa)
 }
 ```
 
-This function, `yellIt`, uses our previous function `makeMoreExciting` as well as the built-in String method [toUpperCase](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/String/toUpperCase). Methods are just a name for a function when it belongs to something &mdash; in this case `toUpperCase` is a function that belongs to `String` so we can refer to it as either a method *or* a function. `makeMoreExciting` on the other hand doesn't belong to anyone so it would be technically incorrect to refer to it as a method (confusing, I know).
+Questa funzione, `urlaLa`, usa la nostra funzione precedente `rendiPiuEsaltante` così come il metodo integrato delle stringhe [toUpperCase](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase). I metodi sono semplicemente un nome per una funzione quando appartiene a qualcosa &mdash; in questo caso `toUpperCase` è una funzione che appartiene a `String`, quindi possiamo chiamarla sia metodo *sia* funzione. `rendiPiuEsaltante`, invece, non appartiene a nessuno, quindi sarebbe tecnicamente scorretto chiamarla metodo (confuso, lo so).
 
-The last line of the function is another built-in that simply takes in any values that you give it and prints them out into the console.
+L'ultima riga della funzione è un'altra funzione integrata che si limita a prendere qualsiasi valore le venga passato e a stamparlo nella console.
 
 ![console](images/custom-function-console-log.gif)
 
-So is there something wrong with the above `yellIt` function? It depends! Here are the two major types of functions:
+Quindi c'è qualcosa di sbagliato nella funzione `urlaLa` qui sopra? Dipende! Ecco i due tipi principali di funzioni:
 
-  - functions that modify or create values and return them
-  - functions take in values and perform some action that cannot be returned
+  - funzioni che modificano o creano valori e li restituiscono
+  - funzioni che prendono dei valori ed eseguono un'azione che non può essere restituita
 
-`console.log` is an example of the second type of function: it prints things out to your console &mdash; an action that you can see with your eyes but that cannot be represented as a JavaScript value. My own rule of thumb is to try to keep the two types of functions separate from each other, so here's how I would rewrite the `yellIt` function:
+`console.log` è un esempio del secondo tipo di funzione: stampa cose nella tua console &mdash; un'azione che puoi vedere con i tuoi occhi ma che non può essere rappresentata come un valore JavaScript. La mia regola personale è cercare di tenere separati questi due tipi di funzioni, quindi ecco come riscriverei la funzione `urlaLa`:
 
 ```js
-function yellIt(string) {
-  string = string.toUpperCase()
-  return makeMoreExciting(string)
+function urlaLa(stringa) {
+  stringa = stringa.toUpperCase()
+  return rendiPiuEsaltante(stringa)
 }
 
-console.log(yellIt("i fear no human"))
+console.log(urlaLa("non temo nessun umano"))
 ```
 
-This way `yellIt` becomes more **generic**, meaning it only does one or two simple little things and doesn't know anything about printing itself to a console &mdash; that part can always be programmed later, outside the function definition.
+In questo modo `urlaLa` diventa più **generica**, nel senso che fa solo una o due piccole cose semplici e non sa nulla su come stamparsi da sola nella console &mdash; quella parte può sempre essere programmata dopo, fuori dalla definizione della funzione.
 
-### <a id="loops" href="#loops">#</a> Loops
+### <a id="loops" href="#loops">#</a> Cicli
 
-Now that we have some basic skills under our belt (*Author's note: do cats even wear belts?*) we can start being lazy. What?! Yes, that's right: programming is about being lazy. Larry Wall, inventor of the Perl programming language, called laziness the [most important virtue](http://c2.com/cgi/wiki?LazinessImpatienceHubris) of a good programmer. If computers didn't exist you would have to do all sorts of tedious tasks by hand, but if you learn to program you can lay in the sun all day while a computer somewhere runs your programs for you. It is a glorious lifestyle filled with relaxation!
+Ora che abbiamo qualche abilità di base sotto la cintura (*nota dell'autore: i gatti indossano mai le cinture?*) possiamo iniziare a essere pigri. Cosa?! Sì, esatto: programmare significa essere pigri. Larry Wall, l'inventore del linguaggio di programmazione Perl, definì la pigrizia come la [virtù più importante](http://c2.com/cgi/wiki?LazinessImpatienceHubris) di un buon programmatore. Se i computer non esistessero dovresti fare a mano ogni genere di compito noioso, ma se impari a programmare puoi startene sdraiato al sole tutto il giorno mentre un computare da qualche parte esegue i tuoi programmi al posto tuo. È uno stile di vita glorioso pieno di relax!
 
-Loops are one of the most important ways to harness the power of a computer. Remember `Underscore.js` from earlier? Make sure you have it loaded in the page (remember: you can just hit the up arrow on your keyboard a few times and then hit `Enter` to load it in again if you need to) and try copy/pasting this into your console:
-  
+I cicli sono uno dei modi più importanti per sfruttare la potenza di un computer. Ricordi `Underscore.js` di prima? Assicurati di averlo caricato nella pagina (ricorda: puoi semplicemente premere la freccia su sulla tastiera un paio di volte e poi premere `Invio` per ricaricarlo se ne hai bisogno) e prova a copiare/incollare questo nella tua console:
+
 ```js
-function logANumber(someNumber) {
-  console.log(someNumber)
+function stampaUnNumero(unNumero) {
+  console.log(unNumero)
 }
-_.times(10, logANumber)
+_.times(10, stampaUnNumero)
 ```
 
-This code uses the [times](http://underscorejs.org/#times) method of Underscore which takes in 1 number and 1 function and then starts from 0 and for 10 steps counts up by 1, calling the function with the number each step of the way.
+Questo codice usa il metodo [times](http://underscorejs.org/#times) di Underscore, che prende 1 numero e 1 funzione e poi parte da 0 e, per 10 passi, conta salendo di 1, chiamando la funzione con il numero a ogni passo.
 
 ![console](images/times-loop.png)
 
-If we were to manually write out what `times` is doing in the above code it would look like this:
+Se dovessimo scrivere manualmente cosa fa `times` nel codice sopra, sarebbe così:
 
 ```js
-logANumber(0)
-logANumber(1)
-logANumber(2)
-logANumber(3)
-logANumber(4)
-logANumber(5)
-logANumber(6)
-logANumber(7)
-logANumber(8)
-logANumber(9)
+stampaUnNumero(0)
+stampaUnNumero(1)
+stampaUnNumero(2)
+stampaUnNumero(3)
+stampaUnNumero(4)
+stampaUnNumero(5)
+stampaUnNumero(6)
+stampaUnNumero(7)
+stampaUnNumero(8)
+stampaUnNumero(9)
 ```
 
-But cats refuse to do unnecessary manual work like this so we must always ask ourselves, *"am I doing this in the laziest way possible?"*.
+Ma i gatti si rifiutano di fare lavoro manuale non necessario come questo, quindi dobbiamo sempre chiederci: *"sto facendo questo nel modo più pigro possibile?"*.
 
-So why is this called looping? Think of it like this: If we were to write out a list of 10 numbers (from 0 to 9) using a JavaScript Array it would look like this:
+Allora perché si chiama "ciclo" (loop)? Pensala così: se dovessimo scrivere una lista di 10 numeri (da 0 a 9) usando un Array JavaScript, sarebbe così:
 
 ```js
-var zeroThroughTen = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var zeroAlDieci = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-What `times` really does is visit each number and repeat a task: in the example above the task was to call the `logANumber` function with the current number. Repeating tasks in this way is referred to as *looping over* the Array.
+Quello che `times` fa realmente è visitare ogni numero e ripetere un compito: nell'esempio sopra il compito era chiamare la funzione `stampaUnNumero` con il numero corrente. Ripetere compiti in questo modo si chiama *ciclare (loop) sull'*Array.
 
-### <a id="arrays" href="#arrays">#</a> Arrays
+### <a id="arrays" href="#arrays">#</a> Array
 
-I've mentioned these a few times but let's spend a minute learning about them. Imagine you need to keep track of all your buddies. Well, an Array will do just fine. Think of an Array like a sorted list that you can keep *tons* of stuff in.
+Li ho già nominati un paio di volte, ma dedichiamo un minuto a impararli meglio. Immagina di dover tenere traccia di tutti i tuoi amici. Bene, un Array andrà benissimo. Pensa a un Array come a una lista ordinata in cui puoi tenere *tonnellate* di roba.
 
-This is how you make one:
+Ecco come se ne crea uno:
 
 ```js
-var myCatFriends = ["bill", "tabby", "ceiling"]
+var mieiAmiciGatti = ["bill", "tabby", "ceiling"]
 ```
 
-Sweet! Now you have a list of your cat buddies.
+Fantastico! Ora hai una lista dei tuoi amici gatti.
 
-Elements (that is what you call a single item in an array) that are stored within arrays start at 0 and count up from there. So `myCatFriends[0]` returns `bill` and `myCatFriends[1]` returns `tabby`... etc etc.
+Gli elementi (così si chiama un singolo elemento in un array) memorizzati negli array partono da 0 e salgono da lì. Quindi `mieiAmiciGatti[0]` restituisce `bill` e `mieiAmiciGatti[1]` restituisce `tabby`... e così via.
 
-To get buddies out of your brand new Array you can just access an element directly like so: 
+Per tirare fuori gli amici dal tuo nuovissimo Array puoi semplicemente accedere direttamente a un elemento così:
 
 ```js
-console.log(myCatFriends[0])
+console.log(mieiAmiciGatti[0])
 ```
 
 ![console](images/array-access.png)
 
-If you made a brand new cat friend at the hippest cat club the other night and you want to add them to your list it is super simple: `myCatFriends.push("super hip cat")`.
+Se hai fatto un nuovo amico gatto all'ultimo club per gatti alla moda l'altra sera e vuoi aggiungerlo alla tua lista, è semplicissimo: `mieiAmiciGatti.push("gatto super trendy")`.
 
-To check that the new cat made it into your array you can use `.length`:
+Per controllare che il nuovo gatto sia entrato nel tuo array puoi usare `.length`:
 
 ![console](images/array-push-length.png)
 
-Notice how `push` returned the length? Handy! Also take note that arrays will always **preserve ordering** which means they will remember the order in which you added or defined things. Not everything in JavaScript preserves ordering so remember this special property of Arrays!
-  
-### <a id="objects" href="#objects">#</a> Objects
+Hai notato come `push` abbia restituito la lunghezza? Comodo! Nota anche che gli array **preservano sempre l'ordine**, il che significa che ricorderanno l'ordine in cui hai aggiunto o definito le cose. Non tutto in JavaScript preserva l'ordine, quindi ricordati questa proprietà speciale degli Array!
 
-Arrays are good for lists, but for other tasks they can be hard to work with. Consider our array of cat friends. What if you also wanted to store more than just names?
+### <a id="objects" href="#objects">#</a> Oggetti
+
+Gli array vanno bene per le liste, ma per altri compiti possono essere scomodi da gestire. Considera il nostro array di amici gatti. E se volessi salvare più di soli nomi?
 
 ```js
-var myCatFriends = ["bill", "tabby", "ceiling"]
-var lastNames = ["the cat", "cat", "cat"]
-var addresses = ["The Alley", "Grandmas House", "Attic"]
+var mieiAmiciGatti = ["bill", "tabby", "ceiling"]
+var cognomi = ["il gatto", "gatto", "gatto"]
+var indirizzi = ["Il Vicolo", "Casa della Nonna", "Soffitta"]
 ```
 
-Sometimes it is nice to have all of the addresses or names in one variable. But sometimes you have a cat in mind, let's say Bill, and you just want to look up that cat's address. With arrays it takes a lot of work because you can't just say 'hey array, give me Bill's address' because 'Bill' is in one array and his address is in a totally different array.
+A volte è comodo avere tutti gli indirizzi o i nomi in un'unica variabile. Ma a volte hai in mente un gatto specifico, diciamo Bill, e vuoi solo cercare l'indirizzo di quel gatto. Con gli array serve un sacco di lavoro perché non puoi semplicemente dire "ehi array, dammi l'indirizzo di Bill" perché "Bill" è in un array e il suo indirizzo è in un array completamente diverso.
 
 ![console](images/array-lookup.png)
 
-This can be brittle because if our arrays change and we add a new cat to the beginning we would have to also update our `billsPosition` variable to point to the new location of Bill's information in the arrays! Here is a easier to maintain way to store information like this using objects:
+Questo può essere fragile perché se i nostri array cambiano e aggiungiamo un nuovo gatto all'inizio, dovremmo anche aggiornare la nostra variabile `posizioneBill` per farla puntare alla nuova posizione delle informazioni di Bill negli array! Ecco un modo più facile da mantenere per salvare informazioni come queste usando gli oggetti:
 
 ```js
-var firstCat = { name: "bill", lastName: "the cat", address: "The Alley" }
-var secondCat = { name: "tabby", lastName: "cat", address: "Grandmas House" }
-var thirdCat = { name: "ceiling", lastName: "cat", address: "Attic" }
+var primoGatto = { nome: "bill", cognome: "il gatto", indirizzo: "Il Vicolo" }
+var secondoGatto = { nome: "tabby", cognome: "gatto", indirizzo: "Casa della Nonna" }
+var terzoGatto = { nome: "ceiling", cognome: "gatto", indirizzo: "Soffitta" }
 ```
-  
-Why would we do it this way? Because now we have a variable for each cat that we can use to get that cats values in a more convenient and readable way. 
+
+Perché dovremmo farlo in questo modo? Perché ora abbiamo una variabile per ogni gatto che possiamo usare per ottenere i valori di quel gatto in modo più comodo e leggibile.
 
 ![console](images/object-lookup.png)
 
-You can think of Objects like keys on a keyring. Each one is for a specific door and if you have nice labels on your keys you can open doors very fast. In fact, the things on the left hand side of the `:` are called **keys** (are also known as **properties**) and the things on the right hand side are **values**.
+Puoi pensare agli Oggetti come alle chiavi su un portachiavi. Ognuna è per una porta specifica e se hai delle belle etichette sulle tue chiavi puoi aprire le porte molto velocemente. Infatti, le cose a sinistra dei `:` si chiamano **chiavi** (conosciute anche come **proprietà**) e le cose a destra sono **valori**.
 
 ```js
-// an object with a single key 'name' and single value 'bill'
-{ name: 'bill' }
+// un oggetto con una singola chiave 'nome' e un singolo valore 'bill'
+{ nome: 'bill' }
 ```
 
-So why would you ever use arrays if you can just put your data in objects? Because objects don't remember the order of the keys that you set. You might enter in an object like this:
+Allora perché mai dovresti usare gli array se puoi semplicemente mettere i tuoi dati negli oggetti? Perché gli oggetti non ricordano l'ordine delle chiavi che hai impostato. Potresti inserire un oggetto così:
 
 ```js
-{ date: "10/20/2012", diary: "slept a bit today", name: "Charles" }
+{ data: "20/10/2012", diario: "oggi ho dormito un po'", nome: "Carlo" }
 ```
 
-But the computer could give it back to you like this:
+Ma il computer potrebbe restituirtelo così:
 
 ```js
-{ diary: "slept a bit today", name: "Charles", date: "10/20/2012" }
+{ diario: "oggi ho dormito un po'", nome: "Carlo", data: "20/10/2012" }
 ```
 
-Or like this!
+Oppure così!
 
 ```js
-{ name: "Charles", diary: "slept a bit today", date: "10/20/2012" }
+{ nome: "Carlo", diario: "oggi ho dormito un po'", data: "20/10/2012" }
 ```
 
-So you can't ever trust the order of keys in objects. If you wanna get REALLY fancy you can make an array filled with objects, or an object filled with arrays!
+Quindi non puoi mai fidarti dell'ordine delle chiavi negli oggetti. Se vuoi fare le cose davvero in grande puoi creare un array pieno di oggetti, o un oggetto pieno di array!
 
 ```js
-var moodLog = [
+var registroUmore = [
   {
-    date: "10/20/2012",
-    mood: "catnipped"
-  }, 
-  {
-    date: "10/21/2012",
-    mood: "nonplussed"
+    data: "20/10/2012",
+    umore: "sballato dall'erba gatta"
   },
   {
-    date: "10/22/2012",
-    mood: "purring"
+    data: "21/10/2012",
+    umore: "spiazzato"
+  },
+  {
+    data: "22/10/2012",
+    umore: "facendo le fusa"
   }
 ]
 
-// ordered from least to most favorite
-var favorites = {
-  treats: ["bird sighting", "belly rub", "catnip"],
-  napSpots: ["couch", "planter box", "human face"]
+// ordinati dal meno al più preferito
+var preferiti = {
+  premi: ["avvistamento di uccellini", "grattino sulla pancia", "erba gatta"],
+  postiPerIlPisolino: ["divano", "fioriera", "faccia dell'umano"]
 }
 ```
 
-When you combine different things like this you are making **data structures**, just like legos!
+Quando combini cose diverse così stai creando **strutture dati**, proprio come i lego!
 
-### <a id="callbacks" href="#callbacks">#</a> Callbacks
+### <a id="callbacks" href="#callbacks">#</a> Callback
 
-Callbacks aren't really a feature of JavaScript like `Object` or `Array`, but instead just a certain way to use functions. To understand why callbacks are useful you first have to learn about asynchronous (often shortened to async) programming. Asynchronous code by definition is code written in a way that is not synchronous. Synchronous code is easy to understand and write. Here is an example to illustrate:
+Le callback non sono davvero una funzionalità di JavaScript come `Object` o `Array`, ma piuttosto un certo modo di usare le funzioni. Per capire perché le callback sono utili devi prima imparare cos'è la programmazione asincrona (spesso abbreviata in "async"). Il codice asincrono è per definizione codice scritto in un modo che non è sincrono. Il codice sincrono è facile da capire e da scrivere. Ecco un esempio per illustrarlo:
 
 ```js
-var photo = download('http://foo-chan.com/images/sp.jpg')
-uploadPhotoTweet(photo, '@maxogden')
+var foto = scarica('http://foo-chan.com/images/sp.jpg')
+caricaFotoTweet(foto, '@maxogden')
 ```
 
-This synchronous [pseudo-code](http://simple.wikipedia.org/wiki/Pseudocode) downloads an adorable cat photo and then uploads the photo to twitter and tweets the photo at `@maxogden`. Pretty straightforward!
+Questo [pseudocodice](http://simple.wikipedia.org/wiki/Pseudocode) sincrono scarica un'adorabile foto di gatto e poi carica la foto su twitter, taggando `@maxogden` nel tweet con la foto. Abbastanza semplice!
 
-(*Author's note: I @maxogden do happily accept random cat photo tweets*)
+(*nota dell'autore: io, @maxogden, accetto volentieri tweet casuali con foto di gatti*)
 
-This code is synchronous because in order for photo to get uploaded to the tweet, the photo download must be completed. This means that line 2 cannot run until the task on line 1 is totally finished. If we were to actually implement this pseudo-code we would want to make sure that `download` 'blocked' execution until the download was finished, meaning it would prevent *any* other JavaScript from being executed until it finished, and then when the download completes it would un-block the JavaScript execution and line 2 would execute.
+Questo codice è sincrono perché, affinché la foto venga caricata nel tweet, il download della foto deve essere completato. Questo significa che la riga 2 non può essere eseguita finché il compito alla riga 1 non è completamente finito. Se dovessimo effettivamente implementare questo pseudocodice, vorremmo assicurarci che `scarica` "bloccasse" l'esecuzione finché il download non fosse terminato, il che significa che impedirebbe l'esecuzione di *qualsiasi* altro JavaScript finché non avesse finito, e poi, al completamento del download, sbloccherebbe l'esecuzione JavaScript e la riga 2 verrebbe eseguita.
 
-Synchronous code is fine for things that happen fast, but it's horrible for things that require saving, loading, downloading or uploading. What if the server you're downloading the photo from is slow, or the internet connection you are using is slow, or the computer you are running the code on has too many youtube cat video tabs open and is running slowly? It means that it could potentially take minutes of waiting before line 2 gets around to running. Meanwhile, because all JavaScript on the page is being blocked from being run while the download is happening, the webpage would totally freeze up and become unresponsive until the download is done.
+Il codice sincrono va bene per le cose che accadono velocemente, ma è terribile per cose che richiedono salvataggio, caricamento, download o upload. E se il server da cui stai scaricando la foto è lento, o la connessione internet che stai usando è lenta, o il computer su cui stai eseguendo il codice ha troppe schede aperte con video di gatti su youtube ed è lento? Significa che potrebbero volerci potenzialmente minuti di attesa prima che la riga 2 venga eseguita. Nel frattempo, dato che tutto il JavaScript nella pagina viene bloccato dall'esecuzione mentre il download è in corso, la pagina web si bloccherebbe completamente e diventerebbe non reattiva finché il download non è terminato.
 
-Blocking execution should be avoided at all costs, especially when doing so makes your program freeze up or become unresponsive. Let's assume the photo above takes one second to download. To illustrate how long one second is to a modern computer, here is a program that tests to see how many tasks JavaScript can process in one second.
+Bloccare l'esecuzione va evitato a tutti i costi, specialmente quando ciò fa bloccare o diventare non reattivo il tuo programma. Supponiamo che la foto sopra impieghi un secondo a scaricarsi. Per illustrare quanto sia lungo un secondo per un computer moderno, ecco un programma che misura quanti compiti JavaScript riesce a elaborare in un secondo.
 
 ```js
-function measureLoopSpeed() {
-  var count = 0
-  function addOne() { count = count + 1 }
+function misuraVelocitaCiclo() {
+  var conteggio = 0
+  function aggiungiUno() { conteggio = conteggio + 1 }
 
-  // Date.now() returns a big number representing the number of
-  // milliseconds that have elapsed since Jan 01 1970
-  var now = Date.now()
+  // Date.now() restituisce un numero grande che rappresenta il numero
+  // di millisecondi trascorsi dal 1 gennaio 1970
+  var adesso = Date.now()
 
-  // Loop until Date.now() is 1000 milliseconds (1 second) or more into
-  // the future from when we started looping. On each loop, call addOne
-  while (Date.now() - now < 1000) addOne()
-  
-  // Finally it has been >= 1000ms, so let's print out our total count
-  console.log(count)
+  // Continua a ciclare finché Date.now() non è 1000 millisecondi (1 secondo)
+  // o più nel futuro rispetto a quando abbiamo iniziato a ciclare.
+  // A ogni ciclo, chiama aggiungiUno
+  while (Date.now() - adesso < 1000) aggiungiUno()
+
+  // Finalmente sono passati >= 1000ms, quindi stampiamo il conteggio totale
+  console.log(conteggio)
 }
 
-measureLoopSpeed()
+misuraVelocitaCiclo()
 ```
 
-Copy-paste the above code into your JavaScript console and after one second it should print out a number. On my computer I got `8527360`, approximately **8.5 million**. In one second JavaScript can call the `addOne` function 8.5 million times! So if you have synchronous code for downloading a photo, and the photo download takes one second, it means you are potentially preventing 8.5 million operations from happening while JavaScript execution is blocked.
+Copia e incolla il codice sopra nella tua console JavaScript e dopo un secondo dovrebbe stampare un numero. Sul mio computer ho ottenuto `8527360`, circa **8,5 milioni**. In un secondo JavaScript può chiamare la funzione `aggiungiUno` 8,5 milioni di volte! Quindi se hai codice sincrono per scaricare una foto, e il download della foto impiega un secondo, significa che stai potenzialmente impedendo che accadano 8,5 milioni di operazioni mentre l'esecuzione JavaScript è bloccata.
 
-Some languages have a function called `sleep` that blocks execution for some number of seconds. For example here is some [`bash`](http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) code running in `Terminal.app` on Mac OS that uses `sleep`. When you run the command `sleep 3 && echo 'done sleeping now'` it blocks for 3 seconds before printing out `done sleeping now`.
+Alcuni linguaggi hanno una funzione chiamata `sleep` che blocca l'esecuzione per un certo numero di secondi. Per esempio, ecco del codice [`bash`](http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) eseguito in `Terminal.app` su Mac OS che usa `sleep`. Quando esegui il comando `sleep 3 && echo 'ho finito di dormire'` blocca per 3 secondi prima di stampare `ho finito di dormire`.
 
 ![console](images/bash-sleep.png)
 
-JavaScript doesn't have a `sleep` function. Since you are a cat you are probably asking yourself, "Why am I learning a programming language that does not involve sleeping?". But stay with me. Instead of relying on `sleep` to wait for things to happen the design of JavaScript encourages use of functions instead. If you have to wait for task A to finish before doing task B, you put all of the code for task B into a function and you only call that function when A is done.
+JavaScript non ha una funzione `sleep`. Dato che sei un gatto probabilmente ti starai chiedendo: "Perché sto imparando un linguaggio di programmazione che non prevede il dormire?". Ma resta con me. Invece di affidarsi a `sleep` per aspettare che le cose accadano, il design di JavaScript incoraggia l'uso delle funzioni. Se devi aspettare che il compito A finisca prima di fare il compito B, metti tutto il codice del compito B in una funzione e chiami quella funzione solo quando A è finito.
 
-For example, this is blocking-style code:
+Per esempio, questo è codice in stile bloccante:
 
 ```js
 a()
 b()
 ```
 
-And this is in a non-blocking style:
+E questo è in stile non bloccante:
 
 ```js
 a(b)
 ```
 
-In the non-blocking version `b` is a callback to `a`. In the blocking version `a` and `b` are both called/invoked (they both have `()` after them which executes the functions immediately). In the non-blocking version you will notice that only `a` gets invoked, and `b` is simply passed in to `a` as an argument.
+Nella versione non bloccante `b` è una callback di `a`. Nella versione bloccante `a` e `b` vengono entrambe chiamate/invocate (hanno entrambe `()` dopo di loro, il che esegue le funzioni immediatamente). Nella versione non bloccante noterai che viene invocata solo `a`, mentre `b` viene semplicemente passata ad `a` come argomento.
 
-In the blocking version, there is no explicit relationship between `a` and `b`. In the non-blocking version it becomes `a`'s job to do what it needs to do and then call `b` when it is done. Using functions in this way is called callbacks because your callback function, in this case `b`, gets called later on when `a` is all done.
+Nella versione bloccante non c'è una relazione esplicita tra `a` e `b`. Nella versione non bloccante diventa compito di `a` fare ciò che deve fare e poi chiamare `b` quando ha finito. Usare le funzioni in questo modo si chiama callback perché la tua funzione di callback, in questo caso `b`, viene chiamata più tardi quando `a` ha completamente finito.
 
-Here is a pseudocode implementation of what `a` might look like:
+Ecco un'implementazione pseudocodice di come potrebbe essere `a`:
 
 ```js
-function a(done) {
-  download('https://pbs.twimg.com/media/B4DDWBrCEAA8u4O.jpg:large', function doneDownloading(error, png) {
-    // handle error if there was one
-    if (err) console.log('uh-oh!', error)
-    
-    // call done when you are all done
-    done()
+function a(fatto) {
+  scarica('https://pbs.twimg.com/media/B4DDWBrCEAA8u4O.jpg:large', function downloadCompletato(errore, png) {
+    // gestisci l'errore se ce n'è stato uno
+    if (err) console.log('uh-oh!', errore)
+
+    // chiama fatto quando hai finito
+    fatto()
   })
 }
 ```
 
-Think back to our non-blocking example, `a(b)`, where we call `a` and pass in `b` as the first argument. In the function definition for `a` above the `done` argument *is* our `b` function that we pass in. This behavior is something that is hard to wrap your head around at first. When you call a function, the arguments you pass in won't have the same variable names when they are in the function. In this case what we call `b` is called `done` inside the function. But `b` and `done` are just variable names that point to the same underlying function. Usually callback functions are labelled something like `done` or `callback` to make it clear that they are functions that should be called when the current function is done.
+Ripensa al nostro esempio non bloccante, `a(b)`, in cui chiamiamo `a` e passiamo `b` come primo argomento. Nella definizione della funzione `a` qui sopra, l'argomento `fatto` *è* la nostra funzione `b` che abbiamo passato. Questo comportamento è qualcosa che all'inizio è difficile da capire fino in fondo. Quando chiami una funzione, gli argomenti che passi non avranno gli stessi nomi di variabile quando sono dentro la funzione. In questo caso quello che chiamiamo `b` viene chiamato `fatto` dentro la funzione. Ma `b` e `fatto` sono solo nomi di variabile che puntano alla stessa funzione sottostante. Di solito le funzioni di callback vengono etichettate con qualcosa come `fatto` o `callback` per rendere chiaro che sono funzioni che dovrebbero essere chiamate quando la funzione corrente ha finito.
 
-So, as long as `a` does it's job and called `b` when it is done, both `a` and `b` get called in both the non-blocking and blocking versions. The difference is that in the non-blocking version we don't have to halt execution of JavaScript. In general non-blocking style is where you write every function so that it can return as soon as possible, without ever blocking.
+Quindi, finché `a` fa il suo lavoro e chiama `b` quando ha finito, sia `a` che `b` vengono chiamate sia nella versione non bloccante che in quella bloccante. La differenza è che nella versione non bloccante non dobbiamo interrompere l'esecuzione di JavaScript. In generale, lo stile non bloccante è quando scrivi ogni funzione in modo che possa terminare il prima possibile, senza mai bloccare.
 
-To drive the point home even further: If `a` takes one second to complete, and you use the blocking version, it means you can only do one thing. If you use the non-blocking version (aka use callbacks) you can do *literally millions* of other things in that same second, which means you can finish your work millions of times faster and sleep the rest of the day.
+Per ribadire ulteriormente il concetto: se `a` impiega un secondo a completarsi, e usi la versione bloccante, significa che puoi fare solo una cosa. Se usi la versione non bloccante (cioè usi le callback) puoi fare *letteralmente milioni* di altre cose in quello stesso secondo, il che significa che puoi finire il tuo lavoro milioni di volte più velocemente e dormire il resto della giornata.
 
-Remember: programming is all about laziness and you should be the one sleeping, not your computer.
+Ricorda: programmare significa essere pigri, e dovresti essere tu a dormire, non il tuo computer.
 
-Hopefully you can see now that callbacks are just functions that call other functions after some asynchronous task. Common examples of asynchronous tasks are things like reading a photo, downloading a song, uploading a picture, talking to a database, waiting for a user to hit a key or click on someone, etc. Anything that takes time. JavaScript is really great at handling asynchronous tasks like these as long as you take the time to learn how to use callbacks and keep your JavaScript from being blocked.
+Spero che ora tu possa vedere che le callback sono semplicemente funzioni che chiamano altre funzioni dopo un qualche compito asincrono. Esempi comuni di compiti asincroni sono cose come leggere una foto, scaricare una canzone, caricare un'immagine, parlare con un database, aspettare che un utente prema un tasto o clicchi su qualcosa, eccetera. Qualsiasi cosa che richieda tempo. JavaScript è davvero bravo a gestire compiti asincroni come questi, purché tu ti prenda il tempo di imparare a usare le callback e a evitare che il tuo JavaScript venga bloccato.
 
-## The end!
+## La fine!
 
-This is just the beginning of your relationship with JavaScript! You can't learn it all at once, but you should find what works for you and try to learn all of the concepts here.
+Questo è solo l'inizio della tua relazione con JavaScript! Non puoi impararlo tutto in una volta, ma dovresti trovare quello che funziona per te e provare a imparare tutti i concetti qui presenti.
 
-I'd recommend coming back again tomorrow and going through the entire thing again from the beginning! It might take a few times through before you get everything (programming is hard). Just try to avoid reading this page in any rooms that contain shiny objects . . . they can be incredibly distracting.
+Ti consiglierei di tornare di nuovo domani e ripassare tutto da capo! Potrebbero volerci un po' di ripassi prima che tu capisca tutto (programmare è difficile). Cerca solo di evitare di leggere questa pagina in stanze che contengono oggetti luccicanti . . . possono essere incredibilmente distraenti.
 
-Got another topic you wanna see covered? Open an issue for it [on github](http://github.com/maxogden/javascript-for-cats).
+Hai un altro argomento che vorresti veder trattato? Apri una issue per suggerirlo [su github](http://github.com/max-mapper/javascript-for-cats) (repository originale in inglese), oppure [su questo repository](https://github.com/lucanenni/javascript-for-cats-it/issues) per segnalazioni sulla traduzione italiana.
 
-### <a id="recommended-reading" href="#recommended-reading">#</a> Recommended reading
+### <a id="recommended-reading" href="#recommended-reading">#</a> Letture consigliate
 
-  JavaScript For Cats skips over lots of details that aren't important for getting started (cats are not known for their attention spans), but if you feel like you need to dive in deeper then check these out:
-  
-  - [NodeSchool.io](http://nodeschool.io/) is a community driven, open source educational software that teaches various web development skills in an interactive, self-guided format. I helped make NodeSchool! Sadly it features fewer cats than this page. 
-  - [Eloquent Javascript](http://eloquentjavascript.net/) is a free book that teaches you JavaScript! It's pretty good! Especially the chapter on [values, variables, and control flow](http://eloquentjavascript.net/chapter2.html)
-  - [Mozilla's JavaScript Guide](https://developer.mozilla.org/en-US/docs/JavaScript/Guide) also has a pretty sweet intro chapter called [values, variables and literals](https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Values,_variables,_and_literals)
-  - [`standard` JS Style Guide](https://github.com/feross/standard) is a "zero configuration" linter for JS style that I use
-  - [Let's Write Code by @shama](https://github.com/shama/letswritecode) a great series of YouTube coding tutorials made by a friend of mine
+  JavaScript per Gatti salta molti dettagli che non sono importanti per iniziare (i gatti non sono famosi per la loro capacità di concentrazione), ma se senti il bisogno di approfondire, dai un'occhiata a questi:
+
+  - [NodeSchool.io](http://nodeschool.io/) è un software educativo open source guidato dalla comunità che insegna varie competenze di sviluppo web in un formato interattivo e autogestito. Ho contribuito a creare NodeSchool! Purtroppo ha meno gatti di questa pagina.
+  - [Eloquent Javascript](http://eloquentjavascript.net/) è un libro gratuito che ti insegna JavaScript! È piuttosto buono! Specialmente il capitolo su [valori, variabili e flusso di controllo](http://eloquentjavascript.net/chapter2.html)
+  - La [Guida JavaScript di Mozilla](https://developer.mozilla.org/it/docs/Web/JavaScript/Guide) ha anche un bel capitolo introduttivo chiamato [valori, variabili e letterali](https://developer.mozilla.org/it/docs/Web/JavaScript/Guide/Grammar_and_types)
+  - La [guida di stile JS `standard`](https://github.com/feross/standard) è un linter per lo stile JS "a configurazione zero" che uso io
+  - [Let's Write Code di @shama](https://github.com/shama/letswritecode), un'ottima serie di tutorial di programmazione su YouTube fatta da un mio amico
 
 <hr>
-### <a id="satisfied-customers" href="#satisfied-customers">#</a> Satisfied customers
+### <a id="satisfied-customers" href="#satisfied-customers">#</a> Clienti soddisfatti
 <center>![satisfied customer](images/customers5.jpg)</center>
 <center>![satisfied customer](images/customers1.png)</center>
 <center>![satisfied customer](images/customers2.png)</center>
 <center>![satisfied customer](images/customers3.png)</center>
 <center>![satisfied customer](images/customers4.png)</center>
 
-*JSForCats.com is a labor of love and work in progress by [@maxogden](http://twitter.com/maxogden). If you would like to contribute and make this tutorial better there is a Github repo [right over here](http://github.com/maxogden/javascript-for-cats).*
+*JSForCats.com è un lavoro d'amore e un progetto in corso di [@maxogden](http://twitter.com/maxogden). Se vuoi contribuire e migliorare questo tutorial c'è un repository Github [proprio qui](http://github.com/max-mapper/javascript-for-cats).*
+
+*Questa traduzione italiana è mantenuta in [questo repository](https://github.com/lucanenni/javascript-for-cats-it). Contributi e correzioni sono benvenuti!*
 <center>![console](images/awesome.jpg)</center>
