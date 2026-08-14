@@ -426,4 +426,6 @@ Hai un altro argomento che vorresti veder trattato? Apri una issue per suggerirl
 *JSForCats.com è un lavoro d'amore e un progetto in corso di [@maxogden](http://twitter.com/maxogden). Se vuoi contribuire e migliorare questo tutorial c'è un repository Github [proprio qui](http://github.com/max-mapper/javascript-for-cats).*
 
 *Questa traduzione italiana è mantenuta in [questo repository](https://github.com/lucanenni/javascript-for-cats-it). Contributi e correzioni sono benvenuti!*
+
+*Nota di manutenzione (14/08/2026): aggiornate le dipendenze di build (`marked`, `mustache`) per correggere vulnerabilità di sicurezza note (ReDoS in `marked`, XSS in `mustache`); adeguato `render.js` alla nuova API di `marked`. Nessuna modifica al contenuto del tutorial.*
 <center>![console](images/awesome.jpg)</center>
