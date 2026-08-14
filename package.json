@@ -5,17 +5,11 @@
   "main": "build.js",
   "scripts": {
     "render": "node render.js",
-    "deploy": "gh-pages-deploy"
+    "deploy": "npm run render && gh-pages -d . -s \"{index.html,stylesheets/**,images/**}\" -m \"Deploy site\" --nojekyll"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/lucanenni/javascript-for-cats-it.git"
-  },
-  "gh-pages-deploy": {
-    "prep": [
-      "render"
-    ],
-    "noprompt": "true"
   },
   "author": "max ogden",
   "contributors": [
@@ -31,6 +25,6 @@
     "mustache": "^4.2.0"
   },
   "devDependencies": {
-    "gh-pages-deploy": "^0.1.1"
+    "gh-pages": "^6.3.0"
   }
 }
