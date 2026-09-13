@@ -411,6 +411,7 @@ Hai un altro argomento che vorresti veder trattato? Apri una issue per suggerirl
 
   - [NodeSchool.io](http://nodeschool.io/) è un software educativo open source guidato dalla comunità che insegna varie competenze di sviluppo web in un formato interattivo e autogestito. Ho contribuito a creare NodeSchool! Purtroppo ha meno gatti di questa pagina.
   - [Eloquent Javascript](http://eloquentjavascript.net/) è un libro gratuito che ti insegna JavaScript! È piuttosto buono! Specialmente il capitolo su [valori, variabili e flusso di controllo](http://eloquentjavascript.net/chapter2.html)
+  - [The Concise TypeScript Book](https://gibbok.github.io/typescript-book/it-it/) è una guida gratuita e open source per approfondire TypeScript in italiano.
   - La [Guida JavaScript di Mozilla](https://developer.mozilla.org/it/docs/Web/JavaScript/Guide) ha anche un bel capitolo introduttivo chiamato [valori, variabili e letterali](https://developer.mozilla.org/it/docs/Web/JavaScript/Guide/Grammar_and_types)
   - La [guida di stile JS `standard`](https://github.com/feross/standard) è un linter per lo stile JS "a configurazione zero" che uso io
   - [Let's Write Code di @shama](https://github.com/shama/letswritecode), un'ottima serie di tutorial di programmazione su YouTube fatta da un mio amico
